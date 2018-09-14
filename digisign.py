@@ -37,7 +37,7 @@ vk2 = sk2.get_verifying_key() # 用私鑰產生公鑰
 
 sig = sk.sign(transaction1 + vk2.to_pem()) # 用上個transaction的內容與owner2的公鑰以owner1的私鑰進行簽名
                                          
-print(sig.encode('hex'))
+print(sig)
 """
 簽名也是產生一段很長的字串，隨資料一起傳送
 '04a3674e4f2027aedf91c7d5fd9786f4c9889579d197a38c50e1b8e6e883aa49fbb3f0712d01af10b7d86ef5b5591c23476a497fe80141c957106fca040d9719'
