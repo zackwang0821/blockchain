@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<form id="app">
+	<fieldset>
+	    <legend>Customer Infomation</legend>
+		    <p>
+			    <button @click.prevent="save_data">Save</button>
+			</p>
+		
+		    <div v-for="(f,n) in info">
+			    <p>
+				<label for="'name'+n">User {{n+1}}</label>
+                <input id="'name'+n" v-model="info[n].name">
+                </p>
+				<p>
+				<label for="'age'+n">User {{n+1}} Age</label>
+                <input id="'age'+n" v-model="info[n].age">
+				</p>
+				<p>
+				<label for="'phone'+n">User {{n+1}} Phone</label>
+				<input id="'phone'+n" v-model="info[n].phone">
+			    </p>
+			</div>				
+	</fieldset>
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+  el:'#app',
+  data:{
+    name:'',
+    age:'',
+	phone:'',
+    info:[{name:'',age:'',phone:''}]
+  },
+  methods:{
+    save_data() {
+      this.info.push({name:'', age:'', phone:''});	  
+    }
+  }
+})
+</script>
+
+</html>
